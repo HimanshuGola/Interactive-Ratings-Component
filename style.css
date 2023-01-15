@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass&display=swap');
+
+
+:root{
+    --clr-primary: hsl(25, 97%, 53%);
+    --clr-primary-light: hsl(25, 70%, 57%);
+
+    --clr-neutral-900: hsl(216, 12%, 8%);
+    --clr-neutral-700: hsl(215, 19%, 14%);
+    --clr-neutral-500: hsl(214, 20%, 20%);
+    --clr-neutral-400: hsl(216, 12%, 54%);
+    --clr-neutral-300: hsl(217, 12%, 63%);
+    --clr-neutral-100: hsl(0, 0%, 100%);
+
+    --fw-bold: 700;
+    --fw-regular: 500;
+}
+
+/* Reset */
+
+*, *::before, *::after {
+box-sizing: border-box;
+}
+* {
+margin: 0;
+}
+html, body {
+min-height: 100%;
+}
+body {
+line-height: 1.5;
+-webkit-font-smoothing: antialiased;
+}
+img, picture, video, canvas, svg {
+display: block;
+max-width: 100%;
+}
+input, button, textarea, select {
+font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+overflow-wrap: break-word;
+}
+#root, #__next {
+isolation: isolate;
+}
+  
+
+/* Utility Classes */
+
+.grid-container{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    gap: 1rem;
+}
+
+.flex-group{
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-decor{
+    margin: 1.5rem 5%;
+    max-width: 430px;
+    padding: 1.5rem;
+    border-radius: 1.3rem;
+    overflow: hidden;
+    background-color: var(--clr-neutral-700);
+}
+
+/* Main CSS */
+
+body{
+    min-height: 100vh;
+    background-color: var(--clr-neutral-900);
+    font-family: 'Overpass', sans-serif;
+
+}
+
+.rating-container{
+    display: grid;
+}
+
+.star-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 2.7rem;
+    width: 13%;
+    aspect-ratio: 1;
+    background-color: var(--clr-neutral-500);
+    border-radius: 50%;
+}
+
+.star-img img{
+    width: 37%;
+}
+
+h1{
+    font-size: 1.5rem;
+    font-weight: var(--fw-bold);
+    color: var(--clr-neutral-100);
+    letter-spacing: 2px;
+}
+
+p{
+    font-size: 0.9rem;
+    font-weight: var(--fw-regular);
+    color: var(--clr-neutral-300);
+}
+
+.rating-input{
+    display: none;
+}
+
+.rating-btn{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    aspect-ratio: 1;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--clr-neutral-500);
+    color: var(--clr-neutral-300);
+    font-size: 0.925rem;
+    font-weight: var(--fw-regular);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.rating-btn:hover{
+    background-color: var(--clr-primary);
+    color: var(--clr-neutral-100);
+}
+
+.rating-input:checked + .rating-btn{
+    background-color: var(--clr-neutral-300);
+    color: var(--clr-neutral-100);
+}
+
+
+.submit-btn{
+    background-color: var(--clr-primary);
+    border: none;
+    border-radius: 50px;
+    width: 100%;
+    text-transform: uppercase;
+    color: var(--clr-neutral-100);
+    font-size: 0.875rem;
+    font-weight: var(--fw-regular);
+    letter-spacing: 2px;
+    padding: 0.75rem 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.submit-btn:is(:hover, :focus, :active){
+    background-color: var(--clr-neutral-100);
+    color: var(--clr-primary);
+}
+
+
+.thankyou-container{
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    padding-block: 2.5rem;
+}
+
+.thankyou-img{
+    max-width: 140px;
+}
+
+.user-rating-display{
+    color: var(--clr-primary-light);
+    font-size: 0.875rem;
+    background-color: var(--clr-neutral-500);
+    line-height: 1;
+    padding: 0.6rem 0.8rem 0.5rem 0.8rem;
+    margin-block: 0.7rem;
+    border: none;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+
+@media (max-width: 325px){
+    .rating-btn{
+        width: 2.5rem;
+    }
+}
+
+@media (min-width: 600px){
+    .container-decor{
+        padding: 1.75rem;
+    }
+
+    .thankyou-container{
+        padding-block: 2.5rem;
+    }
+}
